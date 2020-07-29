@@ -25,35 +25,41 @@ import android.net.Uri;
 import android.view.View;
 
 public class MainActivity extends Activity {
-	
-	
+
+	// ส่วนประกาศ widget
 	private LinearLayout linear1;
 	private TextView textview1;
 	private Button talk_button;
 	private Button group_talk_button;
 	private Button etc_language;
 	private Button about_us;
-	
+
+	// ประกาศส่วนเชื่อมโยง Intent เพื่อไปสู่หน้าอื่น
 	private Intent Talk_Page_Intent = new Intent();
 	private Intent Talk_Group_Intent = new Intent();
 	private Intent Etc_Language_Intent = new Intent();
 	private Intent About_Us_Intent = new Intent();
+
 	@Override
+	// การทำงานเมื่อสร้างหน้าแอพขึ้นมา onCreate
 	protected void onCreate(Bundle _savedInstanceState) {
 		super.onCreate(_savedInstanceState);
 		setContentView(R.layout.main);
 		initialize(_savedInstanceState);
 		initializeLogic();
 	}
-	
+
 	private void initialize(Bundle _savedInstanceState) {
-		
+
+		// ส่วนประกาศตัวแปล ที่เชื่อมโยงกับไฟล์ XML
 		linear1 = (LinearLayout) findViewById(R.id.linear1);
 		textview1 = (TextView) findViewById(R.id.textview1);
 		talk_button = (Button) findViewById(R.id.talk_button);
 		group_talk_button = (Button) findViewById(R.id.group_talk_button);
 		etc_language = (Button) findViewById(R.id.etc_language);
-		
+
+		// ส่วนประกาศ Event onClick
+
 		talk_button.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
